@@ -1,0 +1,20 @@
+import React from 'react';
+import { connect } from 'react-redux'; 
+import './App.css';
+
+function App({ isLoggedIn }) { // Destructure isLoggedIn from props
+  return (
+    <div className="App">
+      <header className="App-header">
+        {isLoggedIn ? <p>User is logged in</p> : <p>User is not logged in</p>}
+      </header>
+    </div>
+  );
+}
+
+const mapStateToProps = (state) => ({
+  isLoggedIn: state.uiReducer.get('isUserLoggedIn'), 
+});
+
+
+export default connect(mapStateToProps)(App);

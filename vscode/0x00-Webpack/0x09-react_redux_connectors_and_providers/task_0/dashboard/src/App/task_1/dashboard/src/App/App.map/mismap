@@ -1,0 +1,16 @@
+function App({ isLoggedIn, displayDrawer }) {
+    return (
+      <div className="App">
+        <header className="App-header">
+          {isLoggedIn ? <p>User is logged in</p> : <p>User is not logged in</p>}
+          {displayDrawer ? <p>Notification Drawer is visible</p> : <p>Notification Drawer is hidden</p>}
+        </header>
+      </div>
+    );
+  }
+  
+  // Export the mapStateToProps function
+  export { mapStateToProps };
+  
+  // Connect the component to the Redux store
+  export default connect(mapStateToProps)(App);
